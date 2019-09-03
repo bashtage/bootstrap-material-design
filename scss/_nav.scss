@@ -2,7 +2,8 @@
 
 .nav-link {
   //line-height: $bmd-nav-link-line-height; // set baseline line-height and font sizes
-  text-transform: uppercase;
+  // TODO: Remove text transform
+  text-transform: none;
 }
 
 // navbars

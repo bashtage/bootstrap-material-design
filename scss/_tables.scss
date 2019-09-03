@@ -48,3 +48,13 @@ thead.thead-inverse,
     border-color: $bmd-table-border-color-inverse;
   }
 }
+
+table:not([class]) {
+  @extend .table;
+  @extend .table-hover;
+}
+
+thead:not([class]) {
+  @extend .thead-dark;
+}
+

@@ -11,7 +11,8 @@
   will-change: transform, opacity;
   transition: transform $bmd-menu-expand-duration $bmd-animation-curve-default,
               opacity $bmd-menu-fade-duration $bmd-animation-curve-default;
-
+  // TODO: Changed this
+  background-color: $grey-800;
   @include media-breakpoint-up(md) {
     padding: .5rem 0;
   }
@@ -58,7 +59,8 @@
   .dropdown-item {
     // used to properly size the ripple container
     position: relative;
-
+    // TODO: Added this color
+    color: $gray-500;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -78,8 +80,16 @@
 
     &.active,
     &:active {
-      background-color: inherit;
-      color: inherit;
+      // TODO: Changed these values
+      background-color: lighten($grey-800, 5%);
+      color: rgba($white, 0.75);
+
+    }
+    // TODO: This has been added
+    &.focus, &.hover,
+    &:focus, &:hover {
+      background-color: lighten($grey-800, 5%);
+      color: rgba($white, 0.75);
     }
 
     // Simple menus always maintain a 16dp margin (phone) or 24dp margin (tablet) to the left and right edges of the screen.
