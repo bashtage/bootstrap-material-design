@@ -4,6 +4,8 @@
   border-radius: 0;
   @include box-shadow($bmd-shadow-2dp);
 
+  // TODO: Changed this
+  padding: 0;
   // give correct size to ripple container
   .navbar-brand {
     position: relative;

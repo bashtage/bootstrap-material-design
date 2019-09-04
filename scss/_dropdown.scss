@@ -12,7 +12,7 @@
   transition: transform $bmd-menu-expand-duration $bmd-animation-curve-default,
               opacity $bmd-menu-fade-duration $bmd-animation-curve-default;
   // TODO: Changed this
-  background-color: $grey-800;
+  background-color: $ks-primary;
   @include media-breakpoint-up(md) {
     padding: .5rem 0;
   }
@@ -81,14 +81,14 @@
     &.active,
     &:active {
       // TODO: Changed these values
-      background-color: lighten($grey-800, 5%);
+      background-color: lighten($ks-primary, 5%);
       color: rgba($white, 0.75);
 
     }
     // TODO: This has been added
     &.focus, &.hover,
     &:focus, &:hover {
-      background-color: lighten($grey-800, 5%);
+      background-color: lighten($ks-primary, 5%);
       color: rgba($white, 0.75);
     }
 

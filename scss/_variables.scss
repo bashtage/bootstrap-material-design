@@ -19,10 +19,12 @@ $bmd-inverse-lighter: rgba($white, 0.54) !default;
 $bmd-label-color: $gray-light !default;
 $bmd-label-color-inner-focus: $gray !default; // e.g. radio label or text-muted not a control-label which is primary
 
+$ks-primary: #07689F;
+
 // Bootstrap Material Design default colors (these can be override by user)
 $theme-colors: () !default;
 $theme-colors: map-merge((
-  primary: $blue,
+  primary: $ks-primary,
   success: $green,
   info: $light-blue,
   warning: $deep-orange,
