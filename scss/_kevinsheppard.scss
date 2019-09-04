@@ -78,3 +78,74 @@ h5 {
 .navbar-dark .form-control::placeholder, .navbar-dark .custom-file-control::placeholder {
     color: rgba(0,0,0,0.5); }
 
+
+table:not([class]) {
+  @extend .table;
+  @extend .table-hover;
+}
+
+div.admonition {
+  margin: 1rem 0 !important;
+}
+
+/*
+.admonition.info {
+  @extend .alert-info;
+
+  p.admonition-title {
+    @extend .alert-info;
+    background-color: lighten(theme-color(info), 25%);
+  }
+}
+
+
+.admonition.note {
+  @extend .alert-secondary;
+
+  p.admonition-title {
+    @extend .alert-secondary;
+    background-color: #cccccd;
+  }
+}
+*/
+
+// Request a color level
+@function color-level($color: $primary, $level: 0) {
+  $color-base: if($level > 0, $black, $white);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
+@mixin admonition-variant($background, $border, $color) {
+  color: $color;
+  @include gradient-bg($background);
+  border-color: $border;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+
+  a {
+    color: darken($color, 10%);
+  }
+}
+
+
+@each $color, $value in $theme-colors {
+  .admonition.#{$color} {
+    @include admonition-variant(color-level($value, $alert-bg-level), color-level($value, $alert-border-level), color-level($value, $alert-color-level));
+  }
+
+  .admonition.#{$color} .admonition-title {
+    background-color: darken(color-level($value, $alert-bg-level), 10%);
+  }
+}
+
+.admonition.note {
+  @include admonition-variant(color-level($secondary, $alert-bg-level), color-level($secondary, $alert-border-level), color-level($secondary, $alert-color-level));
+}
+
+.admonition.note .admonition-title {
+  background-color: darken(color-level($secondary, $alert-bg-level), 10%);
+}
