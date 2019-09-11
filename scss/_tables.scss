@@ -49,6 +49,15 @@ thead.thead-inverse,
   }
 }
 
+.table {
+  width: auto;
+}
+
+.table-100 {
+  width: 100% !important;
+}
+
+
 table:not([class]) {
   @extend .table;
   @extend .table-hover;
