@@ -149,3 +149,10 @@ div.admonition {
 .admonition.note .admonition-title {
   background-color: darken(color-level($secondary, $alert-bg-level), 10%);
 }
+
+.reference.badge.badge-secondary, .tag.p-category {
+  @extend .badge;
+  @extend .badge-primary;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
